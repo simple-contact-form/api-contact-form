@@ -1,3 +1,5 @@
+# docker-compose -> ini yang akan menjalankan container dari image yg sudah dibuild
+
 services:
   # MariaDB Service
   mariadb-contact-form:
@@ -55,7 +57,7 @@ services:
       - DB_USER=${MYSQL_USER}
       - DB_PASSWORD=${MYSQL_PASSWORD}
       - DB_NAME=${MYSQL_DATABASE}
-      - CORS_ALLOWED_ORIGINS=http://localhost:8081,http://localhost:8082,http://cms-contact-form:8081,http://client-contact-form:8082
+      - CORS_ALLOWED_ORIGINS=http://localhost:2081,http://localhost:2082,http://cms-contact-form:2081,http://client-contact-form:2082
       - CORS_ALLOWED_METHODS=GET,POST,PUT,DELETE,OPTIONS
       - CORS_ALLOWED_HEADERS=Origin,Content-Type,Accept,Authorization
       - CORS_ALLOW_CREDENTIALS=true
