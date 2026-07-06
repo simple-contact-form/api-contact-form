@@ -16,9 +16,13 @@ ENV GO111MODULE=on \
 WORKDIR /app
 
 # Copy the source code
+# tanda titik pertama menunjukkan working directory saat ini
+# sedangkan titik kedua menunjukkan working directory pada container
+# artinya kita menyalin semua berkas yg ada di local working directory -> ke container working direcotory: /app
 COPY . .
 
 # Download dependencies
+# menjalankan perintah download dependencies
 RUN go mod download
 
 # Build the application
@@ -58,4 +62,6 @@ USER userapp
 EXPOSE 2080
 
 # Command to run the application
+# CMD [], digunakan untuk mengeksekusi perintah saat docker image telah dijalankan sebagai container
+# dalam hal ini kita akan menjalankan image file dari hasil build aplikasi golang
 CMD ["./api-contact-form"]
